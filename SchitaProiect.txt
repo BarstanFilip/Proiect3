@@ -1,0 +1,22 @@
+Schita Poriect 3
+
+
+
+    Vom implementa o interfata care se refera la stocarea a urmatoarelor tipuri de vehicule: autoturisme, motociclete si camioane intr un parc auto. Interfata va permite introducerea, afisare si vazarea acestora.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        Proiect realizat de Barstan Filip si Coman Horatiu
