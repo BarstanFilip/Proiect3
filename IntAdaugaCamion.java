@@ -17,7 +17,7 @@ public class IntAdaugaCamion extends JFrame implements ItemListener, ActionListe
         this.setLayout(new FlowLayout(200, 300, 100));
         this.setSize(300, 300); // setam dimensiunile
 
-        final String[] marci = {"Volvo", "MAN", "Scania", "Suzuki", "Honda"};
+        final String[] marci = {"Volvo", "MAN", "Scania", "Mercedes", "hjsa"};
 
         comboMarca = new JComboBox<String>(marci);
         comboMarca.addItemListener(this);

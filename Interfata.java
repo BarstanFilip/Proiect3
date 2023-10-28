@@ -27,8 +27,9 @@ public class Interfata extends JFrame implements ActionListener{
 
 
         button3.setBounds(100,400,250,100); // setare dimensiuni
-        button3.setText("Afisati masinile"); // da un nume butonului
+        button3.setText("Vanzare masini"); // da un nume butonului
         button3.addActionListener(this); // executarea unei comenzi in urma apasarii butonului
+
 
 
         this.setTitle("Parc Auto SRL"); // setam titlu
@@ -41,6 +42,7 @@ public class Interfata extends JFrame implements ActionListener{
         this.add(button1); // adauga butonul
         this.add(button2); // adauga butonul
         this.add(button3);
+    
         this.setVisible(true); // face vizibila fereastra
     }
 

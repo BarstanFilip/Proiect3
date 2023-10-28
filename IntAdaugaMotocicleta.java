@@ -65,8 +65,8 @@ public class IntAdaugaMotocicleta extends JFrame implements ItemListener, Action
 
         final String Kawasaki[] = { "Ninja", "gfd", "500", "ghjn", "gds" };
 		final String Yamaha[] = { "YZF", "600", "950", "hfg", "dfh"};
-		final String Suzuki[] = { "300", "R34", "aa", "fhgdc" };
-		final String Honda[] = {"CBR ", "Civic", "gfd", "sdgf"};
+		final String Suzuki[] = { "300", "R34", "aa", "fhgdc", "dsj" };
+		final String Honda[] = {"CBR ", "Civic", "gfd", "sdgf", "sasa"};
 
         if (e.getSource() == comboMarca) {
 			if (comboMarca.getSelectedItem().equals("Marca")) {
