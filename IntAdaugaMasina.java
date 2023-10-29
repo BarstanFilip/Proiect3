@@ -4,18 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 
-public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListener{
-
+public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListener {
     JComboBox<String> comboMarca, comboModel;
-	JButton button1 = new JButton(); // crearea unu buton
+    JTextField txtPret; 
+    JButton button1 = new JButton();
 
-	public static List<Masina> masini = new ArrayList<>();
+    public static List<Masina> motociclete = new ArrayList<>();
 
-    IntAdaugaMasina(){
-
-        this.setTitle("Meniu Adaugare Masini"); // setam titlu
-        this.setLayout(new FlowLayout(200, 300, 100));
-        this.setSize(300, 300); // setam dimensiunile
+    IntAdaugaMasina() {
+        this.setTitle("Meniu Adaugare Motociclete");
+        this.setLayout(new FlowLayout(100, 200, 50));
+        this.setSize(200, 100); 
 
         final String[] marci = {"Marca", "Audi", "BMW", "Renault", "Volkswagen"};
 
@@ -28,75 +27,80 @@ public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListe
         comboModel.setSelectedIndex(0);
         comboModel.setEnabled(false);
 
-        button1.setText("Adauga"); // da un nume butonului
-        button1.addActionListener(this); // executarea unei comenzi in urma apasarii butonului
+        txtPret = new JTextField(7); 
+
+        button1.setText("Adauga");
+        button1.addActionListener(this);
 
         this.add(comboMarca);
         this.add(comboModel);
-		this.add(button1); // adauga butonul
+        this.add(new JLabel("Pret:"));
+        this.add(txtPret); 
+        this.add(button1);
         this.pack();
-        this.setVisible(true); // face vizibila fereastra
+        this.setVisible(true);
     }
 
+    public void actionPerformed(ActionEvent e) {
 
-	public void actionPerformed(ActionEvent e)
-    {
-		
-		List<Masina> masini = new ArrayList<>();
+
+        List<Masina> masini = ListaVehicule.getVehicule();
 
         String Marca = comboMarca.getSelectedItem().toString();
-		String Model = comboModel.getSelectedItem().toString();
-		
-		masini.add(new Masina(Marca, Model));
-		//masini.add(new Masina("Porsche", "911"));
-		//masini.add(new Masina("Tesla", "Model Y"));
+        String Model = comboModel.getSelectedItem().toString();
+        String Pret = txtPret.getText(); 
 
-		for (int i = 0; i < masini.size(); i++) {
-			Masina masina = masini.get(i);
-			System.out.println(masina);
-		}
+        if (Marca.equals("Marca") || Model.equals("Model") || Pret.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Selectați marca, modelul și introduceți prețul înainte de a adăuga motocicleta.", "Eroare", JOptionPane.ERROR_MESSAGE);
+        } else {
+            masini.add(new Masina(Marca, Model, Pret));
+        }
+
+        for (int i = 0; i < masini.size(); i++) {
+            Masina masina = masini.get(i);
+            System.out.println(masina);
+        }
     }
 
-	public static List<Masina> getMasini() {
-        	return masini; 
+    public static List<Masina> getMasini() {
+        return motociclete;
     }
 
     public void itemStateChanged(ItemEvent e) {
-
-        final String Audi[] = { "A3", "A4", "A5", "RS Q8", "TT" };
-		final String BMW[] = { "550d", "E36", "E90", "X7", "Seria 6"};
-		final String Renault[] = { "Megane", "Senic", "Talisman", "Kangoo" };
-		final String Volkswagen[] = {"Golf ", "Passat", "Touareg", "Tiguan"};
+        final String Audi[] = {"A3", "A4", "A5", "RS Q8", "TTs"};
+        final String BMW[] = {"E36", "E60", "Z4", "X6", "I7"};
+        final String Renault[] = {"Megane", "Senic", "Kangoo", "Talisman"};
+        final String Volkswagen[] = {"Golf", "Passat", "Touareg", "Lupo"};
 
         if (e.getSource() == comboMarca) {
-			if (comboMarca.getSelectedItem().equals("Marca")) {
-				comboModel.setEnabled(false);
-			} else if (comboMarca.getSelectedItem().equals("Audi")) {
-				comboModel.setEnabled(true);
-				comboModel.removeAllItems();
-				for (int i = 0; i < Audi.length; i++) {
-					comboModel.addItem(Audi[i]);
-				}
-			} else if (comboMarca.getSelectedItem().equals("BMW")) {
-				comboModel.setEnabled(true);
-				comboModel.removeAllItems();
-				for (int i = 0; i < BMW.length; i++) {
-					comboModel.removeItem(BMW[i]);
-					comboModel.addItem(BMW[i]);
-				}
-			} else if (comboMarca.getSelectedItem().equals("Renault")) {
-				comboModel.setEnabled(true);
-				comboModel.removeAllItems();
-				for (int i = 0; i < Renault.length; i++) {
-					comboModel.addItem(Renault[i]);
-				}
-			}else if (comboMarca.getSelectedItem().equals("Volkswagen")) {
-				comboModel.setEnabled(true);
-				comboModel.removeAllItems();
-				for (int i = 0; i < Volkswagen.length; i++) {
-					comboModel.addItem(Volkswagen[i]);
-				}
-			}
-		}
-    }	
+            if (comboMarca.getSelectedItem().equals("Marca")) {
+                comboModel.setEnabled(false);
+            } else if (comboMarca.getSelectedItem().equals("Audi")) {
+                comboModel.setEnabled(true);
+                comboModel.removeAllItems();
+                for (int i = 0; i < Audi.length; i++) {
+                    comboModel.addItem(Audi[i]);
+                }
+            } else if (comboMarca.getSelectedItem().equals("BMW")) {
+                comboModel.setEnabled(true);
+                comboModel.removeAllItems();
+                for (int i = 0; i < BMW.length; i++) {
+                    comboModel.removeItem(BMW[i]);
+                    comboModel.addItem(BMW[i]);
+                }
+            } else if (comboMarca.getSelectedItem().equals("Renault")) {
+                comboModel.setEnabled(true);
+                comboModel.removeAllItems();
+                for (int i = 0; i < Renault.length; i++) {
+                    comboModel.addItem(Renault[i]);
+                }
+            } else if (comboMarca.getSelectedItem().equals("Volkswagen")) {
+                comboModel.setEnabled(true);
+                comboModel.removeAllItems();
+                for (int i = 0; i < Volkswagen.length; i++) {
+                    comboModel.addItem(Volkswagen[i]);
+                }
+            }
+        }
+    }
 }

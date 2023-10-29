@@ -55,7 +55,7 @@ public class Interfata extends JFrame implements ActionListener{
 
         if(e.getSource() == button2){
                     System.out.println("Buton apasat!");
-                     new IntVizualizareMasini();
+                     new IntVizualizareVehicule();
                  
         }
         

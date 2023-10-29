@@ -16,18 +16,18 @@ public class IntVanzareVehicul extends JFrame {
         this.setLayout(new BorderLayout());
         this.setSize(300, 200);
 
-        masiniDinAltFisier = IntAdaugaMasina.getMasini();
-        masiniDinAltFisier.add(new Masina("BMW", "Seria 7"));
-        masiniDinAltFisier.add(new Masina("Audi", "80"));
-        masiniDinAltFisier.add(new Masina("Skoda", "Fabia"));
 
-        String[] listaMasini = new String[masiniDinAltFisier.size()];
+        List<Masina> masiniDinAltFisier =  ListaVehicule.getVehicule();
+
+        String[] listaVehicule = new String[masiniDinAltFisier.size()];
+
+        
         for (int i = 0; i < masiniDinAltFisier.size(); i++) {
             Masina masina = masiniDinAltFisier.get(i);
-            listaMasini[i] = "Marca: " + masina.getMarca() + " - Modelul: " + masina.getModel();
+            listaVehicule[i] = "Marca: " + masina.getMarca() + " - Modelul: " + masina.getModel();
         }
 
-        list = new JList<>(listaMasini);
+        list = new JList<>(listaVehicule);
         JScrollPane scrollpane = new JScrollPane(list);
         getContentPane().add(scrollpane, BorderLayout.CENTER);
 
@@ -49,12 +49,12 @@ public class IntVanzareVehicul extends JFrame {
     }
 
     private void refreshList() {
-        String[] listaMasini = new String[masiniDinAltFisier.size()];
+        String[] Vehicule = new String[masiniDinAltFisier.size()];
         for (int i = 0; i < masiniDinAltFisier.size(); i++) {
             Masina masina = masiniDinAltFisier.get(i);
-            listaMasini[i] = "Marca: " + masina.getMarca() + " - Modelul: " + masina.getModel();
+            Vehicule[i] = "Marca: " + masina.getMarca() + " - Modelul: " + masina.getModel();
         }
-        list.setListData(listaMasini); // Actualizeaza lista
+        list.setListData(Vehicule); // Actualizeaza lista
     }
 
     public static void main(String[] args) {

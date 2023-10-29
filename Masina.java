@@ -3,16 +3,17 @@ public class Masina {
     private String marca;
     private String model;
     private int an;
-    private float pret;
+    private String pret;
     private String culoare;
 
-    public Masina(String marca, String model) {
+    public Masina(String marca, String model, String pret) {
         this.setMarca(marca);
         this.setModel(model);
         this.setAn(an);
         this.setPret(pret);
         this.setCuloare(culoare);
     }
+    
 
     public String getMarca() {
         return marca;
@@ -26,7 +27,7 @@ public class Masina {
         return an;
     }
 
-    public float getPret(){
+    public String getPret(){
         return pret;
     }
 
@@ -48,7 +49,7 @@ public class Masina {
         this.an = an;
     }
 
-    public void setPret(float pret){
+    public void setPret(String pret){
         this.pret = pret;
     }
 
