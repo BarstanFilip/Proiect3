@@ -10,6 +10,7 @@ public class Interfata extends JFrame implements ActionListener{
     JButton button1 = new JButton(); // crearea unu buton
     JButton button2 = new JButton();
     JButton button3 = new JButton();
+    JButton button4 = new JButton();
 
     public static List<Masina> masiniDinAltFisier = new ArrayList<>();
 
@@ -29,6 +30,10 @@ public class Interfata extends JFrame implements ActionListener{
         button3.setText("Vanzare masini");
         button3.addActionListener(this);
 
+        button4.setBounds(100,550,250,100);
+        button4.setText("Capital firma");
+        button4.addActionListener(this);
+
 
         this.setTitle("Parc Auto SRL");
         this.setLayout(null);
@@ -38,6 +43,7 @@ public class Interfata extends JFrame implements ActionListener{
         this.add(button1);
         this.add(button2);
         this.add(button3);
+        this.add(button4);
         this.setVisible(true);
     }
 
