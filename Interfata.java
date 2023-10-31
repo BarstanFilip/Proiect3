@@ -21,7 +21,7 @@ public class Interfata extends JFrame implements ActionListener{
 
 
         button2.setBounds(100,250,250,100);
-        button2.setText("Afisati masinile");
+        button2.setText("Afisati vehiculele");
         button2.addActionListener(this);
 
 
