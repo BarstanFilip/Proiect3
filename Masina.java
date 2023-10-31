@@ -1,19 +1,23 @@
 public class Masina {
-    
+
     private String marca;
     private String model;
     private int an;
-    private String pret;
+    private float pret;
     private String culoare;
 
-    public Masina(String marca, String model, String pret) {
+    public Masina(String marca, String model, float pret) {
         this.setMarca(marca);
         this.setModel(model);
         this.setAn(an);
         this.setPret(pret);
         this.setCuloare(culoare);
     }
-    
+
+
+    public Masina(String marca2, String model2, int an2, float pret2) {
+    }
+
 
     public String getMarca() {
         return marca;
@@ -27,14 +31,14 @@ public class Masina {
         return an;
     }
 
-    public String getPret(){
+    public float getPret(){
         return pret;
     }
 
     public String getCuloare(){
         return culoare;
     }
-    
+
 
     public void setMarca(String marca) {
         this.marca = marca;
@@ -49,7 +53,7 @@ public class Masina {
         this.an = an;
     }
 
-    public void setPret(String pret){
+    public void setPret(float pret){
         this.pret = pret;
     }
 

@@ -6,15 +6,15 @@ import javax.swing.*;
 
 public class IntAdaugaCamion extends JFrame implements ItemListener, ActionListener {
     JComboBox<String> comboMarca, comboModel;
-    JTextField txtPret; 
+    JTextField txtPret;
     JButton button1 = new JButton();
 
-    public static List<Masina> motociclete = new ArrayList<>();
+    public static List<Masina> camioane = new ArrayList<>();
 
     IntAdaugaCamion() {
-        this.setTitle("Meniu Adaugare Motociclete");
+        this.setTitle("Meniu Adaugare Camioane");
         this.setLayout(new FlowLayout(100, 200, 50));
-        this.setSize(200, 100); 
+        this.setSize(200, 100);
 
         final String[] marci = {"Marca", "MAN", "Iveco", "Scania", "Mercedes-Benz"};
 
@@ -27,7 +27,7 @@ public class IntAdaugaCamion extends JFrame implements ItemListener, ActionListe
         comboModel.setSelectedIndex(0);
         comboModel.setEnabled(false);
 
-        txtPret = new JTextField(7); 
+        txtPret = new JTextField(7);
 
         button1.setText("Adauga");
         button1.addActionListener(this);
@@ -35,35 +35,39 @@ public class IntAdaugaCamion extends JFrame implements ItemListener, ActionListe
         this.add(comboMarca);
         this.add(comboModel);
         this.add(new JLabel("Pret:"));
-        this.add(txtPret); 
+        this.add(txtPret);
         this.add(button1);
         this.pack();
         this.setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
-
-
-		List<Masina> masini = ListaVehicule.getVehicule();
+        List<Masina> camioane = ListaVehicule.getVehicule();
 
         String Marca = comboMarca.getSelectedItem().toString();
         String Model = comboModel.getSelectedItem().toString();
-        String Pret = txtPret.getText(); 
+        String PretStr = txtPret.getText();
 
-        if (Marca.equals("Marca") || Model.equals("Model") || Pret.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Selectați marca, modelul și introduceți prețul înainte de a adăuga motocicleta.", "Eroare", JOptionPane.ERROR_MESSAGE);
+        if (Marca.equals("Marca") || Model.equals("Model") || PretStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Selectati marca, modelul si introduceti pretul inainte de a adauga camionul", "Eroare", JOptionPane.ERROR_MESSAGE);
         } else {
-            masini.add(new Masina(Marca, Model, Pret));
+            try {
+                float Pret = Float.parseFloat(PretStr);
+                camioane.add(new Masina(Marca, Model, Pret));
+                JOptionPane.showMessageDialog(this, "Camioanul a fost adăugată cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Introduceti un pret valid", "Eroare", JOptionPane.ERROR_MESSAGE);
+            }
         }
 
-        for (int i = 0; i < masini.size(); i++) {
-            Masina masina = masini.get(i);
-            System.out.println(masina);
+        for (int i = 0; i < camioane.size(); i++) {
+            Masina camion = camioane.get(i);
+            System.out.println(camion);
         }
     }
-
     public static List<Masina> getMasini() {
-        return motociclete;
+        return camioane;
     }
 
     public void itemStateChanged(ItemEvent e) {

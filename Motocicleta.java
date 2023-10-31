@@ -1,66 +1,21 @@
-public class Motocicleta {
-    
-    private String marca;
-    private String model;
-    private int an;
-    private float pret;
+public class Motocicleta extends Masina {
     private double capacitate;
 
-
-    public Motocicleta(String marca, String model) {
-        this.setMarca(marca);
-        this.setModel(model);
-        this.setAn(an);
-        this.setPret(pret);
-        this.setcapacitate(capacitate);
+    public Motocicleta(String marca, String model, int an, float pret, double capacitate) {
+        super(marca, model, an, pret); // Apelați constructorul clasei părinte (Masina)
+        this.setCapacitate(capacitate);
     }
 
-    private void setcapacitate(double capacitate2) {
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getAn(){
-        return an;
-    }
-
-    public float getPret(){
-        return pret;
-    }
-
-    public double capacitate(){
+    public double getCapacitate() {
         return capacitate;
     }
 
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setAn(int an){
-        this.an = an;
-    }
-
-    public void setPret(float pret){
-        this.pret = pret;
-    }
-
-    public void setCapacitate(double capacitate){
+    public void setCapacitate(double capacitate) {
         this.capacitate = capacitate;
     }
 
     @Override
     public String toString() {
-        return marca + " " + model + " " + an + " " + pret + " " + capacitate ;
+        return super.toString() + " " + capacitate; // Apelați metoda toString() a clasei părinte și adăugați capacitatea
     }
 }
