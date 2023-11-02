@@ -3,7 +3,6 @@ import java.util.List;
 
 public class ListaVehicule {
 
-
     private static List<Masina> vehicule = new ArrayList<>();
 
     public static List<Masina> getVehicule() {

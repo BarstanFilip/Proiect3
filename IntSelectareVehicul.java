@@ -1,15 +1,11 @@
 import java.awt.FlowLayout;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 
 public class IntSelectareVehicul extends JFrame implements ItemListener, ActionListener{
 
     JComboBox<String>  comboTipVehicul;
-	JButton button1 = new JButton(); // crearea unu buton
-
-	public static List<Masina> masini = new ArrayList<>();
+	JButton button1 = new JButton(); 
 
      IntSelectareVehicul()
      {
@@ -23,40 +19,40 @@ public class IntSelectareVehicul extends JFrame implements ItemListener, ActionL
         comboTipVehicul = new JComboBox<String>(tipVehicul);
         comboTipVehicul.addItemListener(this);
 
-        button1.setText("Urmatorul pas"); // da un nume butonului
-        button1.addActionListener(this); // executarea unei comenzi in urma apasarii butonului
+        button1.setText("Urmatorul pas"); 
+        button1.addActionListener(this); 
 
         this.add(comboTipVehicul);
-		this.add(button1); // adauga butonul
+		this.add(button1);
         this.pack();
-        this.setVisible(true); // face vizibila fereastra
+        this.setVisible(true); 
     }
 
-
+     @Override
 	public void actionPerformed(ActionEvent e)
     {
 
-		// int pt fiecare tip //
+		// actionarea butoanelor si creare de noi interfete //
+
         if (comboTipVehicul.getSelectedItem().equals("Masina"))
         {
-            new IntMasina();
+            new IntAdaugaMasina();
         }
 
-
+        
         if (comboTipVehicul.getSelectedItem().equals("Motocicleta"))
         {
-            new IntMotocicleta();
+            new IntAdaugaMotocicleta();
         }
 
 
         if (comboTipVehicul.getSelectedItem().equals("Camion"))
         {
-            new IntCamion();
+            new IntAdaugaCamion();
         }
     }
 
-     public void itemStateChanged(ItemEvent e) {
-
-     }
+    public void itemStateChanged(ItemEvent e) {
+    }
 
 }

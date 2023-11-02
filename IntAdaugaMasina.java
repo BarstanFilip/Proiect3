@@ -41,7 +41,7 @@ public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListe
         this.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) { 
         List<Masina> masini = ListaVehicule.getVehicule();
 
         String Marca = comboMarca.getSelectedItem().toString();
@@ -54,10 +54,10 @@ public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListe
             try {
                 float Pret = Float.parseFloat(PretStr);
                 masini.add(new Masina(Marca, Model, Pret));
-                JOptionPane.showMessageDialog(this, "Mașina a fost adăugată cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Masina a fost adaugata cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Introduceți un pret valid", "Eroare", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Introduceti un pret valid", "Eroare", JOptionPane.ERROR_MESSAGE);
             }
         }
 

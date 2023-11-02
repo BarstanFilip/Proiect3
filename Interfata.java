@@ -1,39 +1,33 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfata extends JFrame implements ActionListener{
+public class Interfata extends JFrame implements ActionListener{   // Interfata principala a programului
 
-    JButton button1 = new JButton(); // crearea unu buton
+    // crearea butonelor
+
+    JButton button1 = new JButton(); 
     JButton button2 = new JButton();
     JButton button3 = new JButton();
-    JButton button4 = new JButton();
-
-    public static List<Masina> masiniDinAltFisier = new ArrayList<>();
 
     Interfata(){
+
+        // setarea butonelor
 
         button1.setBounds(100,100,250,100);
         button1.setText("Introducere vehicul");
         button1.addActionListener(this);
 
-
         button2.setBounds(100,250,250,100);
-        button2.setText("Afisati vehiculele");
+        button2.setText("Afisati vehicule");
         button2.addActionListener(this);
 
-
         button3.setBounds(100,400,250,100);
-        button3.setText("Vanzare masini");
+        button3.setText("Vanzare vehicule");
         button3.addActionListener(this);
 
-        button4.setBounds(100,550,250,100);
-        button4.setText("Capital firma");
-        button4.addActionListener(this);
-
+        // denumirea si setarea dimensiulor interfetei
 
         this.setTitle("Parc Auto SRL");
         this.setLayout(null);
@@ -43,15 +37,15 @@ public class Interfata extends JFrame implements ActionListener{
         this.add(button1);
         this.add(button2);
         this.add(button3);
-        this.add(button4);
         this.setVisible(true);
     }
-
+    
+    // executarea comenzilor butonelor
 
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == button1){
             System.out.println("Buton apasat!");
-            new IntSelectareVehicul();
+            new IntSelectareVehicul();  
         }
 
         if(e.getSource() == button2){
