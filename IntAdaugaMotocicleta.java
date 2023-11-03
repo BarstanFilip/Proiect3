@@ -54,7 +54,7 @@ public class IntAdaugaMotocicleta extends JFrame implements ItemListener, Action
             try {
                 float Pret = Float.parseFloat(PretStr);
                 masini.add(new Masina(Marca, Model, Pret));
-                JOptionPane.showMessageDialog(this, "Motocicleta a fost adăugată cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Motocicleta a fost adaugata cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Introduceti un pret valid", "Eroare", JOptionPane.ERROR_MESSAGE);

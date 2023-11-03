@@ -3,12 +3,12 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
-
-public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListener {
+// clasa  pentru a adauhga masini in lista
+public  class IntAdaugaMasina extends JFrame implements ItemListener, ActionListener {
     JComboBox<String> comboMarca, comboModel;
     JTextField txtPret;
     JButton button1 = new JButton();
-
+//Cream lista
     public static List<Masina> motociclete = new ArrayList<>();
 
     IntAdaugaMasina() {
@@ -43,7 +43,7 @@ public class IntAdaugaMasina extends JFrame implements ItemListener, ActionListe
 
     public void actionPerformed(ActionEvent e) { 
         List<Masina> masini = ListaVehicule.getVehicule();
-
+//apelarea to.string()
         String Marca = comboMarca.getSelectedItem().toString();
         String Model = comboModel.getSelectedItem().toString();
         String PretStr = txtPret.getText();

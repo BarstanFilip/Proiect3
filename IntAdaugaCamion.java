@@ -54,7 +54,7 @@ public class IntAdaugaCamion extends JFrame implements ItemListener, ActionListe
             try {
                 float Pret = Float.parseFloat(PretStr);
                 camioane.add(new Masina(Marca, Model, Pret));
-                JOptionPane.showMessageDialog(this, "Camioanul a fost adăugată cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Camioanul a fost adaugat cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Introduceti un pret valid", "Eroare", JOptionPane.ERROR_MESSAGE);

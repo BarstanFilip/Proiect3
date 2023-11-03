@@ -9,7 +9,7 @@ public class IntVizualizareVehicule extends JFrame {
 
     public IntVizualizareVehicule() {
         this.setTitle("Vehicule Disponibile");
-        this.setLayout(new BorderLayout()); // Utilizați BorderLayout pentru a aranja componentele
+        this.setLayout(new BorderLayout()); // utilizarea borderlayout pentru aranjare
         this.setSize(350, 200);
 
         List<Masina> masiniDinAltFisier =  ListaVehicule.getVehicule();

@@ -22,7 +22,7 @@ public class IntVanzareVehicul extends JFrame {
         String[] listaVehicule = new String[masiniDinAltFisier.size()];
 
         if (masiniDinAltFisier.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Nu există mașini de vândut.", "Eroare", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Nu exista masini de vandut.", "Eroare", JOptionPane.ERROR_MESSAGE);
 
             return;
         }
@@ -45,15 +45,15 @@ public class IntVanzareVehicul extends JFrame {
                 if (selectedIdx >= 0 && selectedIdx < masiniDinAltFisier.size()) {
 
                     Masina masinaVanduta = masiniDinAltFisier.get(selectedIdx);
-                    int confirmare = JOptionPane.showConfirmDialog(null, "Sigur doriți să vindeți vehiculul: " + masinaVanduta.getMarca() + " - " + masinaVanduta.getModel() + "?", "Confirmare vânzare", JOptionPane.YES_NO_OPTION);
+                    int confirmare = JOptionPane.showConfirmDialog(null, "Sigur doriti să vindeti vehiculul: " + masinaVanduta.getMarca() + " - " + masinaVanduta.getModel() + "?", "Confirmare vânzare", JOptionPane.YES_NO_OPTION);
 
                     if (confirmare == JOptionPane.YES_OPTION) {
                         masiniDinAltFisier.remove(selectedIdx);
                         refreshList();
-                        JOptionPane.showMessageDialog(null, "Vehiculul a fost vândut cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Vehiculul a fost vsndut cu succes.", "Succes", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Selectați un vehicul înainte de a încerca să-l vindeți.", "Eroare", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Selectati un vehicul inainte de a incerca sa-l vindeti.", "Eroare", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

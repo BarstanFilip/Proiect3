@@ -1,4 +1,4 @@
-public class Camion extends Masina {  // clasa Camion mostenita de la clasa Masina
+public abstract class Camion extends Masina {  // clasa abstracta Camion mostenita de la clasa Masina
 
     public Camion(String marca, String model, float pret) {
 
